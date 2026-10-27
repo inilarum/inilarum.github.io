@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work | Muralini Mohan</title>
+  <meta name="description" content="Portfolio of Muralini Mohan: art, fashion design and coding projects, from a math and classics student.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=GFS+Didot&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<!-- Greek key (meander) pattern, reused by the bands at the top and bottom of the page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="key" width="24" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 15 H3 V3 H21 V12 H9 V7 H15" style="fill:none;stroke:var(--red);stroke-width:2"/>
+      <path d="M21 12 V15 H24" style="fill:none;stroke:var(--red);stroke-width:2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<a class="skip mono" href="#main">Skip to work</a>
+
+<svg class="band" height="16" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#key)"/></svg>
+
+<nav aria-label="Main">
+  <div class="wrap bar">
+    <a class="nav-name" href="index.html">Muralini Mohan</a>
+    <ul class="nav-links mono">
+      <li><a href="about.html" >About</a></li>
+      <li><a href="work.html" aria-current="page">Work</a></li>
+      <li><a href="code.html">Code</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Work</h2>
+        <span class="greek">ἔργα &middot; works</span>
+      </div>
+    <p class="sec-note">coming soon...</p>
+
+
+      <div class="filters" role="group" aria-label="Filter work by type">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="painting" aria-pressed="false">Painting</button>
+        <button type="button" data-filter="fashion" aria-pressed="false">Fashion &amp; sewing</button>
+      </div>
+
+      <div class="grid">
+
+        <figure class="tile" data-cat="painting">
+          <div class="swatch p-grid"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Painting</span>
+            <span class="title">Painting title</span>
+            <span class="meta">Year, medium, size</span>
+          </figcaption>
+        </figure>
+
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-stripe"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Fashion design</span>
+            <span class="title">Collection or look title</span>
+            <span class="meta">Year, fabric, what I made</span>
+          </figcaption>
+        </figure>
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-twill"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Fashion design</span>
+            <span class="title">Sketch or illustration</span>
+            <span class="meta">Year, medium, inspiration</span>
+          </figcaption>
+        </figure>
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-check"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Sewing</span>
+            <span class="title">Sewn piece title</span>
+            <span class="meta">Year, pattern, fabric</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<svg class="band" height="16" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#key)"/></svg>
+
+<footer>
+  <div class="wrap foot">
+    <span class="mono">&copy; 2026 Muralini Mohan</span>
+    <a class="mono" href="#top">Back to top</a>
+    <span class="mono qed">Q.E.D.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Muralini Mohan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=GFS+Didot&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Muralini Mohan portfolio
+   Colors: red, black and ivory. Light mode is ivory paper with black ink and red accents.
+   Dark mode swaps to black paper with ivory ink and a brighter red.
+   Concept: a page from a geometry text. Greek key bands, a Euclid diagram, Greek captions.
+   To change a color, edit the tokens in :root below. */
+
+:root {
+  --paper: #f4eedc;     /* ivory */
+  --paper-2: #e9e1c8;   /* shaded ivory */
+  --ink: #15110f;       /* black */
+  --ink-soft: #5a524a;
+  --red: #c0182b;
+  --on-red: #f4eedc;
+  --rule: #15110f4d;
+
+  --display: "GFS Didot", "Didot", "Bodoni 72", "Times New Roman", serif;
+  --text: "Cardo", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #121010;
+    --paper-2: #1f1b1a;
+    --ink: #f2ecda;
+    --ink-soft: #b9b2a0;
+    --red: #e5414d;
+    --on-red: #121010;
+    --rule: #f2ecda4d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --paper: #121010;
+    --paper-2: #1f1b1a;
+    --ink: #f2ecda;
+    --ink-soft: #b9b2a0;
+    --red: #e5414d;
+    --on-red: #121010;
+    --rule: #f2ecda4d;
+    color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+.wrap {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.mono {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.greek { font-family: var(--text); font-style: italic; color: var(--red); font-size: 1.15rem; }
+
+.skip { position: absolute; left: -9999px; top: 0; background: var(--ink); color: var(--paper); padding: 8px 12px; z-index: 10; }
+.skip:focus { left: 8px; top: 8px; }
+
+/* Greek key band */
+.band { display: block; width: 100%; }
+
+/* Nav */
+nav { padding-block: 18px; }
+.bar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; }
+.nav-name { font-family: var(--display); font-size: 1.25rem; text-decoration: none; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 6px 22px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; padding-block: 4px; border-bottom: 1px solid transparent; }
+.nav-links a:hover { border-bottom-color: var(--red); }
+
+/* Hero */
+.hero { padding-block: clamp(32px, 6vw, 80px) clamp(40px, 7vw, 88px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px 56px; align-items: center; }
+.eyebrow { margin: 0 0 18px; color: var(--red); }
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(3.4rem, 11.5vw, 7.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+h1 span { color: var(--red); display: block; }
+.lede { font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.5; max-width: 30ch; margin: 0 0 32px; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.btn {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 22px;
+  border: 1px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn.primary { background: var(--red); border-color: var(--red); color: var(--on-red); }
+.btn.primary:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+
+/* Euclid diagram */
+.euclid { margin: 0; width: 100%; max-width: 400px; justify-self: center; }
+.euclid svg { width: 100%; height: auto; display: block; }
+.euclid figcaption { margin-top: 10px; text-align: center; color: var(--ink-soft); }
+.ev-circle { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.ev-tri { fill: color-mix(in srgb, var(--red) 16%, transparent); stroke: var(--red); stroke-width: 3; stroke-linejoin: miter; }
+.ev-pt { fill: var(--ink); }
+.ev-label { font-family: var(--display); font-size: 24px; fill: var(--ink); }
+
+/* Logos */
+.logos { padding-block: clamp(32px, 5vw, 56px); border-block: 1px solid var(--rule); }
+.logos-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 24px 56px; align-items: center; }
+.greek-big { font-family: var(--display); font-weight: 400; font-size: clamp(3rem, 9vw, 5.5rem); line-height: 1; margin: 0; color: var(--red); }
+.gloss { margin: 8px 0 0; color: var(--ink-soft); }
+.logos-text { margin: 0; font-size: 1.3rem; line-height: 1.55; max-width: 44ch; }
+
+/* Bridge diagram */
+.bridge { margin: clamp(32px, 5vw, 56px) auto 0; max-width: 600px; }
+.bridge svg { width: 100%; height: auto; display: block; }
+.bridge figcaption { margin-top: 12px; text-align: center; color: var(--ink-soft); }
+.br-line { stroke: var(--ink); stroke-width: 1.5; }
+.br-brick { fill: var(--paper-2); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.br-keystone { fill: var(--red); stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+.br-name { font-family: var(--text); font-size: 21px; fill: var(--ink); }
+.br-keytext { font-family: var(--display); font-size: 26px; fill: var(--on-red); }
+.br-logos { font-family: var(--display); font-size: 40px; fill: var(--red); }
+.br-small { font-family: var(--text); font-style: italic; font-size: 16px; fill: var(--ink-soft); }
+
+/* Sections */
+section { padding-block: clamp(40px, 6vw, 72px); }
+.logos { padding-block: clamp(32px, 5vw, 56px); }
+.sec-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: 8px 32px; padding-bottom: 14px; margin-bottom: 28px;
+  border-bottom: 1px solid var(--ink); position: relative;
+}
+.sec-head::after {
+  content: "";
+  position: absolute; left: 0; bottom: -5px;
+  width: 9px; height: 9px; border-radius: 50%; background: var(--red);
+}
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1; margin: 0; letter-spacing: -0.01em; }
+.sec-note { margin: 0 0 28px; color: var(--ink-soft); max-width: 52ch; }
+
+/* Filters */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+.filters button {
+  font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 8px 16px; border: 1px solid var(--ink); border-radius: 999px;
+  background: transparent; color: var(--ink); cursor: pointer;
+}
+.filters button:hover { border-color: var(--red); color: var(--red); }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* Work grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 32px 24px; }
+.tile { margin: 0; min-width: 0; }
+.swatch {
+  aspect-ratio: 4 / 5; max-width: 100%; width: 100%;
+  background-color: var(--paper-2); border: 1px solid var(--rule);
+  display: grid; place-items: center; padding: 16px;
+  transition: transform 0.2s;
+}
+img.swatch { display: block; object-fit: cover; padding: 0; }
+.tile:hover .swatch { transform: translateY(-3px); }
+.slot { background: var(--paper); border: 1px dashed var(--ink-soft); padding: 8px 12px; text-align: center; }
+.tile figcaption { padding-top: 12px; display: grid; gap: 2px; }
+.kind { color: var(--red); }
+.title { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; }
+.meta { color: var(--ink-soft); font-size: 1rem; }
+
+/* Placeholder patterns: geometry in red, black and ivory */
+.p-rings { background-image: repeating-radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--red) 45%, transparent) 0 3px, transparent 3px 16px); }
+.p-rays  { background-image: repeating-conic-gradient(from 0deg at 50% 50%, color-mix(in srgb, var(--ink) 22%, transparent) 0 10deg, transparent 10deg 20deg); }
+.p-grid  { background-image:
+  repeating-linear-gradient(0deg, color-mix(in srgb, var(--ink) 20%, transparent) 0 1px, transparent 1px 24px),
+  repeating-linear-gradient(90deg, color-mix(in srgb, var(--red) 40%, transparent) 0 1px, transparent 1px 24px); }
+.p-stripe { background-image: repeating-linear-gradient(90deg, color-mix(in srgb, var(--ink) 24%, transparent) 0 6px, transparent 6px 18px); }
+.p-twill { background-image: repeating-linear-gradient(45deg, color-mix(in srgb, var(--red) 40%, transparent) 0 2px, transparent 2px 9px); }
+.p-check { background-image: conic-gradient(color-mix(in srgb, var(--red) 30%, transparent) 25%, transparent 0 50%, color-mix(in srgb, var(--red) 30%, transparent) 0 75%, transparent 0); background-size: 36px 36px; }
+
+/* Code cards */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px; }
+.card { border: 1px solid var(--ink); padding: 28px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.card h3 { font-family: var(--display); font-weight: 400; font-size: 1.7rem; line-height: 1.15; margin: 0; }
+.card p { margin: 0; color: var(--ink-soft); }
+.pill { justify-self: start; border: 1px solid var(--red); color: var(--red); padding: 3px 10px; border-radius: 999px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.tags li { border: 1px dashed var(--ink-soft); padding: 3px 10px; color: var(--ink-soft); }
+.card .link { color: var(--ink-soft); }
+
+/* About and contact */
+.two { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px 64px; }
+.two p { margin: 0 0 1em; max-width: 58ch; }
+dl { margin: 0; display: grid; gap: 14px; }
+dl div { border-top: 1px solid var(--rule); padding-top: 10px; }
+dt { color: var(--red); margin-bottom: 2px; }
+dd { margin: 0; }
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.contact-list li { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; border-top: 1px solid var(--rule); padding-top: 10px; }
+.contact-list .mono { color: var(--red); min-width: 10ch; }
+.contact-list span:last-child { overflow-wrap: anywhere; }
+
+footer { padding-block: 24px 40px; color: var(--ink-soft); }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+.qed { color: var(--red); }
+
+@media (max-width: 760px) {
+  .hero-grid, .logos-grid, .two { grid-template-columns: minmax(0, 1fr); }
+  .euclid { max-width: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .swatch, .btn { transition: none; }
+  .tile:hover .swatch { transform: none; }
+}
+
+</style>
+
+
+<!-- Greek key (meander) pattern, reused by the bands at the top and bottom of the page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="key" width="24" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 15 H3 V3 H21 V12 H9 V7 H15" style="fill:none;stroke:var(--red);stroke-width:2"/>
+      <path d="M21 12 V15 H24" style="fill:none;stroke:var(--red);stroke-width:2"/>
+    </pattern>
+  </defs>
+</svg>
+
+<a class="skip mono" href="#work">Skip to work</a>
+
+<svg class="band" height="16" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#key)"/></svg>
+
+<nav aria-label="Main">
+  <div class="wrap bar">
+    <a class="nav-name" href="#top">Muralini Mohan</a>
+    <ul class="nav-links mono">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#code">Code</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="mono eyebrow">Mathematics &middot; Classics &middot; Art</p>
+      <h1>Muralini <span>Mohan</span></h1>
+      <p class="lede">I study math and classics, make art, and explore.</p>
+      <div class="hero-links">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <figure class="euclid">
+      <svg viewBox="-30 60 380 280" role="img" aria-label="Euclid's construction of an equilateral triangle: two circles of equal radius meet at a point that completes the triangle">
+        <circle class="ev-circle" cx="100" cy="200" r="120"/>
+        <circle class="ev-circle" cx="220" cy="200" r="120"/>
+        <polygon class="ev-tri" points="100,200 220,200 160,96.1"/>
+        <circle class="ev-pt" cx="100" cy="200" r="4"/>
+        <circle class="ev-pt" cx="220" cy="200" r="4"/>
+        <circle class="ev-pt" cx="160" cy="96.1" r="4"/>
+        <text class="ev-label" x="82" y="228" text-anchor="middle">Α</text>
+        <text class="ev-label" x="238" y="228" text-anchor="middle">Β</text>
+        <text class="ev-label" x="160" y="80" text-anchor="middle">Γ</text>
+      </svg>
+      <figcaption class="mono">Euclid, Elements I.1</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="logos" aria-labelledby="logos-title">
+    <div class="wrap">
+      <div class="logos-grid">
+        <div>
+          <h2 id="logos-title" class="greek-big">λόγος</h2>
+          <p class="mono gloss">word &middot; reason &middot; ratio</p>
+        </div>
+        <p class="logos-text">In Greek, one word covers speech, reason and ratio, and this word is the bridge between stem and humanities.
+        On the one side you have stem and mathematics, on the other you have humanities and philosophy.
+        The keystone of this bridge is logic.</p>
+      </div>
+
+      <figure class="bridge">
+      <svg viewBox="130 60 540 290" role="img" aria-label="Diagram of a stone arch. The names Science, Mathematics, Philosophy and Humanities are written along its four bricks, from the left foot to the right foot. Logic is written on the red keystone at the top. Below the arch is the word logos, meaning word, reason and ratio.">
+        <defs>
+          <path id="arc-science" d="M217 330 A183 183 0 0 1 255.8 217.3"/>
+          <path id="arc-math" d="M255.8 217.3 A183 183 0 0 1 355.7 152.4"/>
+          <path id="arc-phil" d="M444.3 152.4 A183 183 0 0 1 544.2 217.3"/>
+          <path id="arc-hum" d="M544.2 217.3 A183 183 0 0 1 583 330"/>
+          <path id="arc-logic" d="M356 153.4 A182 182 0 0 1 444 153.4"/>
+        </defs>
+
+        <!-- ground -->
+        <line class="br-line" x1="130" y1="330" x2="670" y2="330"/>
+
+        <!-- bricks of the arch, with each field written along its brick -->
+        <path class="br-brick" d="M270 330 L150 330 A250 250 0 0 1 203 176.1 L297.6 250 A130 130 0 0 0 270 330 Z"/>
+        <path class="br-brick" d="M297.6 250 L203 176.1 A250 250 0 0 1 339.5 87.4 L368.6 203.9 A130 130 0 0 0 297.6 250 Z"/>
+        <path class="br-brick" d="M431.4 203.9 L460.5 87.4 A250 250 0 0 1 597 176.1 L502.4 250 A130 130 0 0 0 431.4 203.9 Z"/>
+        <path class="br-brick" d="M502.4 250 L597 176.1 A250 250 0 0 1 650 330 L530 330 A130 130 0 0 0 502.4 250 Z"/>
+        <text class="br-name"><textPath href="#arc-science" startOffset="50%" text-anchor="middle">Science</textPath></text>
+        <text class="br-name"><textPath href="#arc-math" startOffset="50%" text-anchor="middle">Mathematics</textPath></text>
+        <text class="br-name"><textPath href="#arc-phil" startOffset="50%" text-anchor="middle">Philosophy</textPath></text>
+        <text class="br-name"><textPath href="#arc-hum" startOffset="50%" text-anchor="middle">Humanities</textPath></text>
+
+        <!-- keystone -->
+        <path class="br-keystone" d="M370 209.7 L337.6 79.7 A258 258 0 0 1 462.4 79.7 L430 209.7 A124 124 0 0 0 370 209.7 Z"/>
+        <text class="br-keytext"><textPath href="#arc-logic" startOffset="50%" text-anchor="middle">Logic</textPath></text>
+
+        <!-- the bridge itself -->
+        <text class="br-logos" x="400" y="296" text-anchor="middle">λόγος</text>
+        <text class="br-small" x="400" y="320" text-anchor="middle">word · reason · ratio</text>
+      </svg>
+      <figcaption class="mono">Four fields form the arch. Logic is the keystone.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Work</h2>
+        <span class="greek">ἔργα &middot; works</span>
+      </div>
+    <p class="sec-note">coming soon...</p>
+
+
+      <div class="filters" role="group" aria-label="Filter work by type">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="painting" aria-pressed="false">Painting</button>
+        <button type="button" data-filter="fashion" aria-pressed="false">Fashion &amp; sewing</button>
+      </div>
+
+      <div class="grid">
+
+        <figure class="tile" data-cat="painting">
+          <div class="swatch p-grid"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Painting</span>
+            <span class="title">Painting title</span>
+            <span class="meta">Year, medium, size</span>
+          </figcaption>
+        </figure>
+
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-stripe"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Fashion design</span>
+            <span class="title">Collection or look title</span>
+            <span class="meta">Year, fabric, what you made</span>
+          </figcaption>
+        </figure>
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-twill"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Fashion design</span>
+            <span class="title">Sketch or illustration</span>
+            <span class="meta">Year, medium, inspiration</span>
+          </figcaption>
+        </figure>
+        <figure class="tile" data-cat="fashion">
+          <div class="swatch p-check"><span class="slot mono">Add image here</span></div>
+          <figcaption>
+            <span class="mono kind">Sewing</span>
+            <span class="title">Sewn piece title</span>
+            <span class="meta">Year, pattern, fabric</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="code">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Code</h2>
+        <span class="greek">τέχνη &middot; craft</span>
+      </div>
+      <p class="sec-note">coming soon...</p>
+
+      <div class="cards">
+        <article class="card">
+          <span class="pill mono">Planned</span>
+          <h3>linguistics project</h3>
+          <p>a tool for the students(like me) trying to make sense of Socrates' sentences</p>
+          <ul class="tags mono" aria-label="Tools used">
+            <li>Language</li>
+            <li>Library</li>
+            <li>Data source</li>
+          </ul>
+          <span class="mono link">GitHub link goes here</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>About</h2>
+        <span class="greek">ἐγώ &middot; I</span>
+      </div>
+      <div class="two">
+        <div>
+          <p>salvete omnes! i'm muralini and everyone always asks me why math and classics?
+            everything starts with my love of languages. greek and latin are my current studies,
+            but i intend to work in sanskrit and tamil, indian classical languages.
+          math is an extension of this passion. to me, the language of logic is just as beautiful
+        as sappho's poems or homer's epics. </p>
+        </div>
+        <dl>
+          <div><dt class="mono">studies</dt><dd>mathematics and classics</dd></div>
+          <div><dt class="mono">education</dt>
+            <dd>cornell university</dd>
+            <dd>phillips exeter academy</dd></div>
+          <div><dt class="mono">based in</dt><dd>Ithaca and Boston</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Contact</h2>
+        <span class="greek">χαῖρε &middot; hello</span>
+      </div>
+      <ul class="contact-list">
+        <li><span class="mono">email</span><span>mm3632@cornell.edu</span></li>
+        <li><span class="mono">instagram</span><span>@inilarum</span></li>
+        <li><span class="mono">linkedIn</span><span>linkedin.com/in/muralinimohan</span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<svg class="band" height="16" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#key)"/></svg>
+
+<footer>
+  <div class="wrap foot">
+    <span class="mono">&copy; 2026 Muralini Mohan</span>
+    <a class="mono" href="#top">Back to top</a>
+    <span class="mono qed">Q.E.D.</span>
+  </div>
+</footer>
+
+
+
+<script>
+// Filter buttons for the Work section.
+(function () {
+  var buttons = document.querySelectorAll('[data-filter]');
+  var tiles = document.querySelectorAll('[data-cat]');
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter');
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      tiles.forEach(function (tile) {
+        tile.hidden = !(filter === 'all' || tile.getAttribute('data-cat') === filter);
+      });
+    });
+  });
+})();
+
+</script>
+
+</body></html>
